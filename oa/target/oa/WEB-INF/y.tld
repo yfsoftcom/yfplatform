@@ -6,7 +6,7 @@
 	<description>yfoa自定义标签</description>
 	<tlib-version>1.0</tlib-version>
 	<short-name>y</short-name>
-	<uri>/y-tags</uri>
+	<uri>http://yf.biz/y</uri>
 	
 	
 	<!-- 输出信息 -->
