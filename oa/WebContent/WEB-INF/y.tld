@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd"
+    version="2.0">
+	<description>yfoa自定义标签</description>
+	<tlib-version>1.0</tlib-version>
+	<short-name>y</short-name>
+	<uri>/y-tags</uri>
+	
+	
+	<!-- 输出信息 -->
+	<tag>
+		<description>输出信息</description>
+		<name>get_info</name>
+		<tag-class>yf.platform.tag.YfFormTag</tag-class>
+		<body-content>scriptless</body-content>
+		<attribute>
+			<name>key</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+</taglib>
