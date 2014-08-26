@@ -8,4 +8,3 @@
 --%>
 <% request.setAttribute("page", "/VIEW/theme/yf01/index.jsp"); %>
 <jsp:include page="${ page }" />
-

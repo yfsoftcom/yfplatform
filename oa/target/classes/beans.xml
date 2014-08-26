@@ -14,7 +14,7 @@
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
 		<property name="url"
-			value="jdbc:mysql://localhost:3306/yf-platform-db?characterEncoding=UTF-8" />
+			value="jdbc:mysql://localhost:3306/yf-oa?characterEncoding=UTF-8" />
 		<property name="username" value="dbadmin" />
 		<property name="password" value="741235896" />
 		<!-- 
@@ -62,7 +62,14 @@
         <property name="mapperInterface" value="biz.yf.oa.dao.CommonMapper"></property>
         <property name="sqlSessionFactory" ref="sqlSessionFactory"></property>
     </bean>
+    <bean id="userDao" class="org.mybatis.spring.mapper.MapperFactoryBean">
+        <property name="mapperInterface" value="biz.yf.oa.dao.UserMapper"></property>
+        <property name="sqlSessionFactory" ref="sqlSessionFactory"></property>
+    </bean>
 	<!-- All Service Config -->
-	
+	<bean id="loginService" class="biz.yf.oa.service.LoginService">
+	    <property name="userMapper" ref="userDao"></property>
+	    
+	</bean>
 	
 </beans>

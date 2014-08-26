@@ -2,7 +2,6 @@ package biz.yf.oa.test;
 
 import junit.framework.TestCase;
 import biz.yf.oa.bo.Bo;
-import biz.yf.oa.bo.ObjectId;
 
 public class BoTestCase extends TestCase {
 
@@ -26,7 +25,7 @@ public class BoTestCase extends TestCase {
 		
 		System.out.println(s);
 		
-		bo.setId(new ObjectId(3L));
+		bo.setId(3);
 		
 		System.out.println(bo.toString());
 	}

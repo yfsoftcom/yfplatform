@@ -14,16 +14,19 @@ public class Bo implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	private ObjectId _id = new ObjectId(0);
+	private int _id = 0;
 	
-	public ObjectId getId(){
+	
+	
+	public int getId() {
 		return _id;
 	}
-	
-	public void setId(ObjectId id){
-		_id = id;
+
+	public void setId(int id) {
+		this._id = id;
 	}
-	
+
+
 	@Override
 	public String toString() {
 		return new JSONObject(this).toString();
