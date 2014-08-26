@@ -14,6 +14,8 @@ import biz.yf.oa.service.LoginService;
 @Controller
 public class UserController {
 
+	
+	
 	@Resource(name = "loginService")
 	private LoginService loginService;
 	
@@ -23,12 +25,16 @@ public class UserController {
 		User u = new User();
 		u.setLoginName(username);
 		u.setLoginPass(password);
-		AccessResult ar =  loginService.login(u);
+		AccessResult ar =  loginService.login(u);;
 		if(ar.isSuccess()){
+			//request.getSession().setAttribute(arg0, arg1)
 			return "default";
 		}else{
 			return "loginError"; 
 		}
 	}
+	
+	
+	
 
 }
