@@ -25,7 +25,7 @@ public class UserController {
 		u.setLoginPass(password);
 		AccessResult ar =  loginService.login(u);
 		if(ar.isSuccess()){
-			return "dddd";
+			return "default";
 		}else{
 			return "loginError"; 
 		}
