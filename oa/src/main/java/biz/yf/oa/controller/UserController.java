@@ -14,8 +14,6 @@ import biz.yf.oa.service.LoginService;
 @Controller
 public class UserController {
 
-	
-	
 	@Resource(name = "loginService")
 	private LoginService loginService;
 	
