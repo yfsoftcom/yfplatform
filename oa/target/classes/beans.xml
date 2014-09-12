@@ -69,7 +69,6 @@
 	<!-- All Service Config -->
 	<bean id="loginService" class="biz.yf.oa.service.LoginService">
 	    <property name="userMapper" ref="userDao"></property>
-	    
 	</bean>
 	
 </beans>

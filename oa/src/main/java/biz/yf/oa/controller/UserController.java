@@ -7,7 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import biz.yf.oa.bo.AccessResult;
+import biz.yf.oa.bo.BizWrapper;
 import biz.yf.oa.bo.User;
 import biz.yf.oa.service.LoginService;
 
@@ -23,7 +23,7 @@ public class UserController {
 		User u = new User();
 		u.setLoginName(username);
 		u.setLoginPass(password);
-		AccessResult ar =  loginService.login(u);;
+		BizWrapper ar =  loginService.login(u);;
 		if(ar.isSuccess()){
 			//request.getSession().setAttribute(arg0, arg1)
 			return "default";

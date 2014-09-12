@@ -1,6 +1,6 @@
 package biz.yf.oa.service;
 
-import biz.yf.oa.bo.AccessResult;
+import biz.yf.oa.bo.BizWrapper;
 import biz.yf.oa.bo.User;
 import biz.yf.oa.dao.UserMapper;
 
@@ -21,17 +21,16 @@ public class LoginService {
 
 
 
-	public AccessResult login(User u){
+	public BizWrapper login(User u){
 		int resultId = this.userMapper.login(u);
-		AccessResult ar = new AccessResult();
+		BizWrapper result = new BizWrapper();
 		//登录正常
 		if(resultId>0){
+			result.success();
 			u.setId(resultId);
 		}else{
-			ar.setSuccess(false);
-			ar.setCode((byte)resultId);
-			ar.setMsg("ERROR!");
+			result.error((byte)resultId, "ERROR!");
 		}
-		return ar;
+		return result;
 	}
 }
