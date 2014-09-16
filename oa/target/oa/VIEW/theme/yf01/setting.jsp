@@ -91,10 +91,6 @@
 				        nibh commodo elit ultricies euismod. Maecenas ullamcorper erat eu ligula faucibus 
 				        quis adipiscing nibh varius.<small>Someone famous in Source Title</small>
 				      </blockquote>
-				      
-				      <div id="obs-tree">
-				      	jstree来处理obs
-				      </div>
 				</div>
 			</div>
 		</div>
