@@ -33,4 +33,9 @@ public class LoginService {
 		}
 		return result;
 	}
+	
+	public BizWrapper findUserById(int id){
+		User u = this.userMapper.findUserById(id);
+		return new BizWrapper().success().setData(u);
+	}
 }

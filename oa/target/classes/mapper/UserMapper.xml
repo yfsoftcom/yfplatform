@@ -18,5 +18,10 @@
     <select id="login" parameterType="User"  resultType="Integer">
 	      select id from oa_user where login_name = #{loginName} and login_pass = #{loginPass}
 	 </select>
+	
+    <select id="findUserById" parameterType="Integer"  resultType="User">
+        select * from oa_user where id = ${value}
+    </select>
+    
 </mapper>
    

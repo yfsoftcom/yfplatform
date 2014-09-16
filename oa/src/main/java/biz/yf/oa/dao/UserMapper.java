@@ -16,4 +16,11 @@ public interface UserMapper extends CommonMapper {
 	 */
 	public int login(User user);
 	
+	/**
+	 * 通过用户的id加载用户的其他信息
+	 * @param id 用户的id
+	 * @return 用户的对象
+	 */
+	public User findUserById(int id);
+	
 }

@@ -66,8 +66,13 @@
         <property name="mapperInterface" value="biz.yf.oa.dao.UserMapper"></property>
         <property name="sqlSessionFactory" ref="sqlSessionFactory"></property>
     </bean>
+    
 	<!-- All Service Config -->
 	<bean id="loginService" class="biz.yf.oa.service.LoginService">
+	    <property name="userMapper" ref="userDao"></property>
+	</bean>
+	
+	<bean id="userService" class="biz.yf.oa.service.UserService">
 	    <property name="userMapper" ref="userDao"></property>
 	</bean>
 	
