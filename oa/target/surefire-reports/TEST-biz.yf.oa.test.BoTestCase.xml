@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="0" time="0.012" errors="0" skipped="0" tests="1" name="biz.yf.oa.test.BoTestCase">
+<testsuite failures="0" time="0.013" errors="0" skipped="0" tests="1" name="biz.yf.oa.test.BoTestCase">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="D:\JAVA\JRE7\bin"/>
@@ -26,7 +26,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="user.variant" value=""/>
     <property name="os.name" value="Windows Server 2008 R2"/>
-    <property name="classworlds.conf" value="E:\WORKSPACE\ADNROID\.metadata\.plugins\org.eclipse.m2e.launching\launches\m2conf5203706551404910136.tmp"/>
+    <property name="classworlds.conf" value="E:\WORKSPACE\ADNROID\.metadata\.plugins\org.eclipse.m2e.launching\launches\m2conf933692674129924879.tmp"/>
     <property name="sun.jnu.encoding" value="GBK"/>
     <property name="java.library.path" value="D:\JAVA\JRE7\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;D:\ORACLE\product\11.2.0\client_1\bin;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;D:\ORACLE\client\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;D:\JAVA\JDK7\bin;C:\Program Files\nodejs\;D:\TortoiseSVN\bin;D:\apache-ant-1.9.3\bin;C:\Users\Frank\AppData\Roaming\npm;F:\Git\bin;D:\JAVA\maven\bin;."/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
@@ -62,5 +62,5 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase time="0.012" classname="biz.yf.oa.test.BoTestCase" name="testToString"/>
+  <testcase time="0.013" classname="biz.yf.oa.test.BoTestCase" name="testToString"/>
 </testsuite>

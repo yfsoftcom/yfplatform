@@ -92,13 +92,36 @@
 				        quis adipiscing nibh varius.<small>Someone famous in Source Title</small>
 				      </blockquote>
 				      
-				      <div id="obs-tree">
-				      	jstree来处理obs
-				      </div>
+				      <ul id="obs-tree"class="treeview">
+						<li>
+							<div class="hitarea expandable-hitarea"></div>
+							<span>YF Team</span>
+							<ul>
+								<li>
+									<div class="hitarea expandable-hitarea"></div>
+									<span>项目部</span>
+									<ul id="folder21">
+										<li>
+											<div class="hitarea expandable-hitarea"></div>
+											<span>开发部</span>
+										</li>
+										<li>
+											<div class="hitarea expandable-hitarea"></div>
+											<span>运维部</span>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li><span class="file">管理员</span></li>
+					</ul>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
 
+<script>
+$("#obs-tree").treeview();
+</script>
 <jsp:include page="footer.jsp" />
