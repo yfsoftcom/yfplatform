@@ -12,59 +12,7 @@
 	<div class="page-container">
 		<div class="container">
 			<div class="row">
-				<div class="span3">
-					<h4>系统设置</h4>
-					<div class="sidebar">
-						<ul class="col-nav span3">
-							<li>
-								<a href="#user-setting" data-toggle="collapse" class="accordion-toggle">
-									<span class="label label-inverse pull-right">3 </span>用户管理</a>
-							</li>
-							<li id="user-setting" class="collapse">
-								<ul>
-									<li>
-										<a href="#"> <i class="pull-right icon-plus"></i>添加用户</a>
-										<a href="#"> <i class="pull-right icon-search"></i>查询用户</a>
-										<a href="#"> <i class="pull-right icon-groups"></i>用户组管理</a>
-									</li>
-								</ul>
-							</li>
-							<li>
-								<a href="#obs-setting" data-toggle="collapse" class="accordion-toggle"> 
-								<span class="label label-inverse pull-right">2</span>组织架构管理</a>
-							</li>
-							<li id="obs-setting" class="collapse">
-								<ul>
-									<li>
-										<a href="#"> <i class="pull-right icon-signal"></i>添加OBS</a>
-										<a href="#"> <i class="pull-right icon-fire"></i>查询OBS</a>
-									</li>
-								</ul>
-							</li>
-							<li>
-								<a href="#"><i class="pull-right icon-cog"></i>权限管理 </a>
-							</li>
-							<li>
-								<a href="#"><i class="pull-right icon-star"></i>模型管理 </a>
-							</li>
-							<li>
-								<a href="#"><i class="pull-right icon-user"></i>自定义表单</a>
-							</li>
-							<li>
-								<a href="#wf-setting" data-toggle="collapse" class="accordion-toggle">
-								<span class="label label-inverse pull-right">2</span>流程管理</a>
-							</li>
-							<li id="wf-setting" class="collapse">
-								<ul>
-									<li>
-										<a href="#"> <i class="pull-right icon-signal"></i>新建流程</a>
-										<a href="#"> <i class="pull-right icon-fire"></i>流程配置</a>
-									</li>
-								</ul>
-							</li>
-						</ul>
-					</div>
-				</div>
+				<jsp:include page="setting/settingBanner.jsp" />
 				<div class="span9">
 					<div class="alert alert-block">
 				        <button type="button" data-dismiss="alert" class="close">&times;</button>

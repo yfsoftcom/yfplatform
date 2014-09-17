@@ -58,22 +58,37 @@
 	<bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
 	    <constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory" />
 	</bean>
+	
 	<bean id="commonDao" class="org.mybatis.spring.mapper.MapperFactoryBean">
         <property name="mapperInterface" value="biz.yf.oa.dao.CommonMapper"></property>
         <property name="sqlSessionFactory" ref="sqlSessionFactory"></property>
     </bean>
+    
     <bean id="userDao" class="org.mybatis.spring.mapper.MapperFactoryBean">
         <property name="mapperInterface" value="biz.yf.oa.dao.UserMapper"></property>
         <property name="sqlSessionFactory" ref="sqlSessionFactory"></property>
     </bean>
+    
+    <bean id="settingDao" class="org.mybatis.spring.mapper.MapperFactoryBean">
+        <property name="mapperInterface" value="biz.yf.oa.dao.SettingMapper"></property>
+        <property name="sqlSessionFactory" ref="sqlSessionFactory"></property>
+    </bean>
+    
     
 	<!-- All Service Config -->
 	<bean id="loginService" class="biz.yf.oa.service.LoginService">
 	    <property name="userMapper" ref="userDao"></property>
 	</bean>
 	
+	
 	<bean id="userService" class="biz.yf.oa.service.UserService">
 	    <property name="userMapper" ref="userDao"></property>
 	</bean>
+	
+	<bean id="settingService" class="biz.yf.oa.service.SettingService">
+	    <property name="settingMapper" ref="settingDao"></property>
+	</bean>
+	
+	
 	
 </beans>
