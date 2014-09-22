@@ -1,0 +1,4 @@
+<workflows>
+	<workflow name="myworkflow" type="resource" location="myworkflow.xml" />
+	<workflow name="example" type="resource" location="example.xml" />
+</workflows>

@@ -7,6 +7,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.opensymphony.workflow.Workflow;
+import com.opensymphony.workflow.basic.BasicWorkflow;
+import com.opensymphony.workflow.config.DefaultConfiguration;
+
 import biz.yf.oa.bo.BizWrapper;
 import biz.yf.oa.bo.User;
 import biz.yf.oa.service.LoginService;
@@ -32,6 +36,18 @@ public class UserController {
 		if(ar.isSuccess()){
 			u = userService.findUserById(u.getId()).getData();
 			request.getSession().setAttribute("SESSION_USER", u);
+			
+			//加载工作流信息
+			Workflow workflow = new BasicWorkflow("testuser");
+			DefaultConfiguration config = new DefaultConfiguration();
+			workflow.setConfiguration(config);
+			try {
+				long workflowId = workflow.initialize("example", 100, null);
+			}catch(Exception ex){
+				
+			}
+			
+			
 			if(u.isAdmin()){
 				return "redirect:/home/dashboard.do";
 			}else{

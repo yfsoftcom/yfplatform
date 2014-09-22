@@ -91,4 +91,11 @@
 	
 	
 	
+	<!-- 配置mybatis集成propertyset -->
+	
+	<bean id="propertySetMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+        <property name="mapperInterface" value="biz.yf.oa.propertyset.PropertySetMapper"></property>
+        <property name="sqlSessionFactory" ref="sqlSessionFactory"></property>
+    </bean>
+	
 </beans>

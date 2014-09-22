@@ -38,8 +38,9 @@
 
 
 	<!-- 指定Spring Bean的配置文件所在目录。默认配置在WEB-INF目录下 -->
+	<!-- 加载多个配置文件，中间使用英文逗号隔开 -->
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
-		<param-value>classpath:beans.xml</param-value>
+		<param-value>classpath:beans.xml,classpath:beans-osworkflow.xml</param-value>
 	</context-param>
 </web-app>
