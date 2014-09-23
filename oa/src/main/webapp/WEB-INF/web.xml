@@ -41,6 +41,6 @@
 	<!-- 加载多个配置文件，中间使用英文逗号隔开 -->
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
-		<param-value>classpath:beans.xml,classpath:beans-osworkflow.xml</param-value>
+		<param-value>classpath:beans.xml</param-value>
 	</context-param>
 </web-app>

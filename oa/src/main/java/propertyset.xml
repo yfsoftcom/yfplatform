@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <propertysets>
-	<propertyset name="mybatis" class="biz.yf.oa.propertyset.MyBatisPropertySet">
+	<propertyset name="jdbc" class="com.opensymphony.module.propertyset.database.JDBCPropertySet">  
+        <arg name="datasource" value="jdbc/oa"/>  
 		<arg name="table.name" value="OS_PROPERTYENTRY" />
 		<arg name="col.globalKey" value="GLOBAL_KEY" />
 		<arg name="col.itemKey" value="ITEM_KEY" />

@@ -43,6 +43,7 @@ public class UserController {
 			workflow.setConfiguration(config);
 			try {
 				long workflowId = workflow.initialize("example", 100, null);
+				System.out.println(workflowId);
 			}catch(Exception ex){
 				
 			}
