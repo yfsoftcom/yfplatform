@@ -1,6 +1,6 @@
 <osworkflow>
 	<persistence class="com.opensymphony.workflow.spi.jdbc.MySQLWorkflowStore">
-		<property key="datasource" value="jdbc/DefaultDS" />
+		<property key="datasource" value="jdbc/oa" />
 		<property key="entry.sequence" value="select seq_val from 	yp_sequence where seq_name = 'os_entry' " />
 		<property key="entry.sequence.increment" value="update 	yp_sequence set seq_val = seq_val+1 where seq_name = 'os_entry' " />
 		<property key="entry.sequence.retrieve" value="select seq_val from 	yp_sequence where seq_name = 'os_entry' " />

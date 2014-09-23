@@ -6,5 +6,7 @@
     <select id="getInfo" parameterType="String"  resultType="String">
 	      select id from test
 	 </select>
+	 
+    
 </mapper>
    
