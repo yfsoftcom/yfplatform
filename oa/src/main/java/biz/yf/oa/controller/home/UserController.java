@@ -1,5 +1,8 @@
 package biz.yf.oa.controller.home;
 
+import java.util.Iterator;
+import java.util.List;
+
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
@@ -7,14 +10,15 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.opensymphony.workflow.Workflow;
-import com.opensymphony.workflow.basic.BasicWorkflow;
-import com.opensymphony.workflow.config.DefaultConfiguration;
-
 import biz.yf.oa.bo.BizWrapper;
 import biz.yf.oa.bo.OAUser;
 import biz.yf.oa.service.LoginService;
 import biz.yf.oa.service.UserService;
+
+import com.opensymphony.workflow.Workflow;
+import com.opensymphony.workflow.basic.BasicWorkflow;
+import com.opensymphony.workflow.config.DefaultConfiguration;
+import com.opensymphony.workflow.query.WorkflowExpressionQuery;
 
 @Controller
 public class UserController {
@@ -41,8 +45,12 @@ public class UserController {
 			DefaultConfiguration config = new DefaultConfiguration();
 			workflow.setConfiguration(config);
 			try {
-				long workflowId = workflow.initialize("example", 100, null);
-				System.out.println(workflowId);
+				//long workflowId = workflow.initialize("example", 100, null);
+				List list = workflow.query(new WorkflowExpressionQuery());
+				for(Iterator it = list.iterator();it.hasNext();){
+					Object o = it.next();
+					System.out.println(o);
+				}
 			}catch(Exception ex){
 				ex.printStackTrace();
 			}

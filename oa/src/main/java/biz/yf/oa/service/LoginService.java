@@ -18,7 +18,7 @@ import com.opensymphony.user.UserManager;
  */
 public class LoginService {
 
-	private static final Log logger = LogFactory.getLog(UserManager.class);
+	private static final Log logger = LogFactory.getLog(LoginService.class);
 	
 	private UserMapper userMapper;
 

@@ -23,4 +23,11 @@ public interface UserMapper extends CommonMapper {
 	 */
 	public OAUser findUserById(int id);
 	
+	/**
+	 * 通过用户插入数据，并返回ID
+	 * @param u
+	 * @return
+	 */
+	public int createUser(OAUser u);
+	
 }

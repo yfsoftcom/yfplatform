@@ -23,5 +23,9 @@
         select * from oa_user where id = ${value}
     </select>
     
+    <insert id="createUser">
+        
+    </insert>
+    
 </mapper>
    
