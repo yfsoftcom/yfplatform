@@ -1,7 +1,7 @@
 package biz.yf.oa.service;
 
 import biz.yf.oa.bo.BizWrapper;
-import biz.yf.oa.bo.User;
+import biz.yf.oa.bo.OAUser;
 import biz.yf.oa.dao.UserMapper;
 
 /**
@@ -27,7 +27,13 @@ public class UserService {
 	 * @return User对象
 	 */
 	public BizWrapper findUserById(int id){
-		User u = this.userMapper.findUserById(id);
+		OAUser u = this.userMapper.findUserById(id);
+		return new BizWrapper().success().setData(u);
+	}
+	
+	
+	public BizWrapper findUserByName(String name){
+		OAUser u = null;//this.userMapper.findUserById(id);
 		return new BizWrapper().success().setData(u);
 	}
 }

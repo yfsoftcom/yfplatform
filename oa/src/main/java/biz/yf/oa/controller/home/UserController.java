@@ -12,7 +12,7 @@ import com.opensymphony.workflow.basic.BasicWorkflow;
 import com.opensymphony.workflow.config.DefaultConfiguration;
 
 import biz.yf.oa.bo.BizWrapper;
-import biz.yf.oa.bo.User;
+import biz.yf.oa.bo.OAUser;
 import biz.yf.oa.service.LoginService;
 import biz.yf.oa.service.UserService;
 
@@ -29,12 +29,11 @@ public class UserController {
 	@RequestMapping("user/login.do")	
 	public String login(@RequestParam("username") String username,String password, HttpServletRequest request) {
 		
-		User u = new User();
-		u.setLoginName(username);
-		u.setLoginPass(password);
-		BizWrapper ar =  loginService.login(u);
+		//loginService.login(u)
+		OAUser u = null;
+		BizWrapper ar =  loginService.auth(username,password,getIpAddr(request));
 		if(ar.isSuccess()){
-			u = userService.findUserById(u.getId()).getData();
+			u = userService.findUserByName(username).getData();
 			request.getSession().setAttribute("SESSION_USER", u);
 			
 			//加载工作流信息
@@ -59,6 +58,24 @@ public class UserController {
 		}
 	}
 	
+	/**
+	 * 获取客户端远程的IP
+	 * @param request
+	 * @return
+	 */
+	public String getIpAddr(HttpServletRequest request) {  
+	    String ip = request.getHeader("x-forwarded-for");  
+	    if(ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) {  
+	        ip = request.getHeader("Proxy-Client-IP");  
+	    }  
+	    if(ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) {  
+	        ip = request.getHeader("WL-Proxy-Client-IP");  
+	    }  
+	    if(ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) {  
+	        ip = request.getRemoteAddr();  
+	    }  
+	    return ip;  
+	}  
 	
 	@RequestMapping("home/dashboard.do")
 	public String dashboard(HttpServletRequest request){

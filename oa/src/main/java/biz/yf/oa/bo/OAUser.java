@@ -1,16 +1,16 @@
 package biz.yf.oa.bo;
 
-public class User extends Bo {
+public class OAUser extends Bo {
 
 	private static final long serialVersionUID = 111537015703852351L;
-
 	
 	private String loginName,loginPass,email,loginIP;
 	
-	
-	private byte isAdmin = 0;
+	private boolean isAdmin = false;
 	
 	private int status = 0;
+	
+	private boolean isOnline = false;
 	
 	private long loginTime,activeTime;
 
@@ -47,17 +47,13 @@ public class User extends Bo {
 	}
 
 	public boolean isAdmin() {
-		return isAdmin == 1;
+		return isAdmin;
 	}
 
 	public void setAdmin(boolean isAdmin) {
-		this.isAdmin = (byte)(isAdmin?1:0);
-	}
-
-	public void setAdmin(byte isAdmin) {
 		this.isAdmin = isAdmin;
 	}
-	
+
 	public int getStatus() {
 		return status;
 	}
@@ -80,6 +76,14 @@ public class User extends Bo {
 
 	public void setActiveTime(long activeTime) {
 		this.activeTime = activeTime;
+	}
+
+	public boolean isOnline() {
+		return isOnline;
+	}
+
+	public void setOnline(boolean isOnline) {
+		this.isOnline = isOnline;
 	}
 	
 	
