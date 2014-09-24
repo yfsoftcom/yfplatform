@@ -22,6 +22,11 @@
         select * from oa_user where id = ${value}
     </select>
     
+    <select id="findUserByName" parameterType="String"  resultType="OAUser">
+        select * from oa_user where login_name = #{value}
+    </select>
+    
+    
     <insert id="createUser" parameterType="OAUser" useGeneratedKeys="true">
         INSERT INTO `oa_user`(`login_name`, `email`) 
         VALUES (#{loginName},#{email})

@@ -17,6 +17,7 @@
 		<title>YFOA PLATFORM</title>
 		<link rel="stylesheet" href="${contextPath }/css/bootstrap.css" />
 		<link rel="stylesheet" href="${contextPath }/css/bootstrap-responsive.css" />
+		<link rel="stylesheet" href="${contextPath }/css/font-awesome.min.css" />
 		<link rel="stylesheet" href="${contextPath }/css/styles.css" />
 		<link rel="stylesheet" href="${contextPath }/css/toastr.css" />
 		<link rel="stylesheet" href="${contextPath }/css/fullcalendar.css" />

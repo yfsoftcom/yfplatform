@@ -73,6 +73,9 @@ public class BizWrapper {
 
 	@SuppressWarnings("unchecked")
 	public <T> T getData() {
+		if(data == null){
+			return null;
+		}
 		return (T) data;
 	}
 

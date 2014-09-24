@@ -39,6 +39,10 @@
 	<div class="container">
 		<div class="row">
 			<div class="span6 offset2">
+				<div class="alert alert-error">
+					<button type="button" data-dismiss="alert" class="close">&times;</button>
+					<strong>错误! </strong>${ERROR }
+				</div>	
 				<div class="login">
 					<form class="form-horizontal"
 						action="${rootPath }/user/login.do" method="POST">

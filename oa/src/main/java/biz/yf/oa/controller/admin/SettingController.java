@@ -8,6 +8,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.opensymphony.user.UserManager;
+
 import biz.yf.oa.bo.BizWrapper;
 import biz.yf.oa.bo.OAUser;
 import biz.yf.oa.service.SettingService;
@@ -65,7 +67,6 @@ public class SettingController {
 	public String listGroup(HttpServletRequest request){
 		
 		//TODO通过设置mapper接口读取数据
-		
 		BizWrapper bizResult  = settingService.listGroup();
 		if(bizResult.isSuccess()){
 			//查询成功

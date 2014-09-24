@@ -41,8 +41,11 @@ public class UserService {
 	}
 	
 	public BizWrapper findUserByName(String name){
-		OAUser u = null;//this.userMapper.findUserById(id);
-		return new BizWrapper().success().setData(u);
+		OAUser u = this.userMapper.findUserByName(name);
+		if(u != null){
+			return new BizWrapper().success().setData(u);
+		}
+		return new BizWrapper().error(-1,"Login Name Not Exists!");
 	}
 	
 	/**
@@ -79,5 +82,7 @@ public class UserService {
 		}
 		return new BizWrapper().error(-3,"System Error!");
 	}
+	
+	
 	
 }

@@ -1,8 +1,5 @@
 package biz.yf.oa.controller.home;
 
-import java.util.Iterator;
-import java.util.List;
-
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
@@ -14,11 +11,6 @@ import biz.yf.oa.bo.BizWrapper;
 import biz.yf.oa.bo.OAUser;
 import biz.yf.oa.service.LoginService;
 import biz.yf.oa.service.UserService;
-
-import com.opensymphony.workflow.Workflow;
-import com.opensymphony.workflow.basic.BasicWorkflow;
-import com.opensymphony.workflow.config.DefaultConfiguration;
-import com.opensymphony.workflow.query.WorkflowExpressionQuery;
 
 @Controller
 public class UserController {
@@ -33,37 +25,40 @@ public class UserController {
 	@RequestMapping("user/login.do")	
 	public String login(@RequestParam("username") String username,String password, HttpServletRequest request) {
 		
-		//loginService.login(u)
 		OAUser u = null;
-		BizWrapper ar =  loginService.auth(username,password,getIpAddr(request));
-		if(ar.isSuccess()){
-			u = userService.findUserByName(username).getData();
-			request.getSession().setAttribute("SESSION_USER", u);
-			
-			//加载工作流信息
-			Workflow workflow = new BasicWorkflow("testuser");
-			DefaultConfiguration config = new DefaultConfiguration();
-			workflow.setConfiguration(config);
-			try {
-				//long workflowId = workflow.initialize("example", 100, null);
-				List list = workflow.query(new WorkflowExpressionQuery());
-				for(Iterator it = list.iterator();it.hasNext();){
-					Object o = it.next();
-					System.out.println(o);
+		BizWrapper wrapper =  loginService.auth(username,password,getIpAddr(request));
+		if(wrapper.isSuccess()){
+			wrapper = userService.findUserByName(username);
+			if(wrapper.isSuccess()){
+				u = wrapper.getData();
+				request.getSession().setAttribute("SESSION_USER", u);
+				if(u.isAdmin()){
+					return "redirect:/home/dashboard.do";
+				}else{
+					return "redirect:/admin/dashboard.do";
 				}
-			}catch(Exception ex){
-				ex.printStackTrace();
 			}
 			
-			
-			if(u.isAdmin()){
-				return "redirect:/home/dashboard.do";
-			}else{
-				return "redirect:/admin/dashboard.do";
-			}
-		}else{
-			return "loginError"; 
+//			//加载工作流信息
+//			Workflow workflow = new BasicWorkflow("testuser");
+//			DefaultConfiguration config = new DefaultConfiguration();
+//			workflow.setConfiguration(config);
+//			try {
+//				//long workflowId = workflow.initialize("example", 100, null);
+//				List list = workflow.query(new WorkflowExpressionQuery());
+//				for(Iterator it = list.iterator();it.hasNext();){
+//					Object o = it.next();
+//					System.out.println(o);
+//				}
+//			}catch(Exception ex){
+//				ex.printStackTrace();
+//			}
+//			
 		}
+		
+		request.setAttribute("ERROR", wrapper.getMsg());
+		return "yf01/login"; 
+		
 	}
 	
 	/**

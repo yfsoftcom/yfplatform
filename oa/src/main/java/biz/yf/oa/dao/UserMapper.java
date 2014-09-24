@@ -26,6 +26,13 @@ public interface UserMapper extends CommonMapper {
 	public OAUser findUserById(int id);
 	
 	/**
+	 * 通过用户的登录名加载用户的其他登录信息
+	 * @param name 用户的登录名
+	 * @return
+	 */
+	public OAUser findUserByName(String name);
+	
+	/**
 	 * 通过用户插入数据，并返回ID
 	 * @param u
 	 * @return
