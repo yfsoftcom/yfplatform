@@ -5,6 +5,6 @@
     <setting name="defaultExecutorType" value="REUSE" />
   </settings>
   <typeAliases>
-      <typeAlias type="biz.yf.oa.bo.User" alias="User"/>
+      <typeAlias type="biz.yf.oa.bo.OAUser" alias="OAUser"/>
   </typeAliases>
 </configuration>

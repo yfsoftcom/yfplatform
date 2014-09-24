@@ -1,5 +1,7 @@
 package biz.yf.oa.dao;
 
+import org.springframework.dao.DataAccessException;
+
 import biz.yf.oa.bo.OAUser;
 
 /**
@@ -28,6 +30,6 @@ public interface UserMapper extends CommonMapper {
 	 * @param u
 	 * @return
 	 */
-	public int createUser(OAUser u);
+	public int createUser(OAUser u) throws DataAccessException;
 	
 }

@@ -1,6 +1,7 @@
 package biz.yf.oa.controller.admin;
 
 import javax.annotation.Resource;
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
@@ -8,7 +9,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import biz.yf.oa.bo.BizWrapper;
+import biz.yf.oa.bo.OAUser;
 import biz.yf.oa.service.SettingService;
+import biz.yf.oa.service.UserService;
 
 @Controller
 public class SettingController {
@@ -33,6 +36,10 @@ public class SettingController {
 	
 	@Resource(name = "settingService") 
 	private SettingService settingService;
+	
+	
+	@Resource(name = "userService") 
+	private UserService userService;
 	
 	/**
 	 * 添加一个用户组
@@ -96,6 +103,7 @@ public class SettingController {
 			//查询成功
 			request.setAttribute("obslist", bizResult.getData());
 		}else{
+			
 			System.out.println("失败！"+bizResult.getMsg());
 		}
 		
@@ -106,5 +114,27 @@ public class SettingController {
 	/********************************
 	 *******针对OBS的操作 END  ******
 	 ********************************/
+	
+	
+	//~针对用户的操作
+	
+	@RequestMapping("user/add.do")
+	public String addUser(@RequestParam("loginname") String loginname,
+							@RequestParam("loginpass") String loginpass,
+							@RequestParam("email") String email,
+							HttpServletRequest request) throws ServletException{
+		
+		OAUser oau = new OAUser();
+		oau.setLoginName(loginname);
+		oau.setLoginPass(loginpass);
+		oau.setEmail(email);
+		BizWrapper wrapper = userService.createUser(oau);
+		if(wrapper.isSuccess()){
+			request.setAttribute("RESULT", wrapper);
+		}else{
+			throw new ServletException(wrapper.getMsg());
+		}
+		return "yf01/empty";
+	}
 	
 }

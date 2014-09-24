@@ -2,10 +2,9 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="biz.yf.oa.dao.UserMapper">
     
-    <resultMap id="user" type="User">
+    <resultMap id="user" type="OAUser">
 		<result property="id" column="id" />
 		<result property="loginName" column="login_name" />
-		<result property="loginPass" column="login_pass" />
 		<result property="email" column="email" />
 		<result property="loginIp" column="login_ip" />
 		<result property="loginTime" column="login_time" />
@@ -15,13 +14,18 @@
 	</resultMap>
 
     
-    <select id="login" parameterType="User"  resultType="Integer">
+    <select id="login" parameterType="OAUser"  resultType="Integer">
 	      select id from oa_user where login_name = #{loginName} and login_pass = #{loginPass}
 	 </select>
 	
-    <select id="findUserById" parameterType="Integer"  resultType="User">
+    <select id="findUserById" parameterType="Integer"  resultType="OAUser">
         select * from oa_user where id = ${value}
     </select>
+    
+    <insert id="createUser" parameterType="OAUser" useGeneratedKeys="true">
+        INSERT INTO `oa_user`(`login_name`, `email`) 
+        VALUES (#{loginName},#{email})
+    </insert>
     
 </mapper>
    

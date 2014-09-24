@@ -18,17 +18,8 @@
 		<link rel="stylesheet" href="${contextPath }/css/bootstrap.css" />
 		<link rel="stylesheet" href="${contextPath }/css/bootstrap-responsive.css" />
 		<link rel="stylesheet" href="${contextPath }/css/styles.css" />
-		<link rel="stylesheet" href="${contextPath }/css/toastr.css" />
-		<link rel="stylesheet" href="${contextPath }/css/fullcalendar.css" />
 		<script src="${contextPath }/js/jquery-1.11.0.min.js"></script>
 		<script src="${contextPath }/js/bootstrap.js"></script>
-		<script src="${contextPath }/js/jquery.knob.js"></script>
-		<script src="${contextPath }/js/jquery.sparkline.min.js"></script>
-		<script src="${contextPath }/js/jquery.tablesorter.min.js"></script>
-		<script src="${contextPath }/js/jquery.peity.min.js"></script>
-		<script src="${contextPath }/js/fullcalendar.min.js"></script>
-		<script src="${contextPath }/js/gcal.js"></script>
-		<script src="${contextPath }/js/setup.js"></script>
 		
 	</head>
 	<body>

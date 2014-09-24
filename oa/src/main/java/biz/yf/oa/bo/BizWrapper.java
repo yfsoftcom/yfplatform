@@ -1,5 +1,7 @@
 package biz.yf.oa.bo;
 
+import org.json.JSONObject;
+
 /**
  * 用于在Service和Controller之间进行数据信息传递的包装类型
  * @author Frank
@@ -78,5 +80,12 @@ public class BizWrapper {
 		this.data = data;
 		return this;
 	}
+
+	@Override
+	public String toString() {
+		JSONObject jo = new JSONObject(this);
+		return jo.toString();
+	}
+	
 
 }
