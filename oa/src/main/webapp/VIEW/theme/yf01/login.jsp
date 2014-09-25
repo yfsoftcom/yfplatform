@@ -39,10 +39,12 @@
 	<div class="container">
 		<div class="row">
 			<div class="span6 offset2">
+				<c:if test="${ERROR ne null }">
 				<div class="alert alert-error">
 					<button type="button" data-dismiss="alert" class="close">&times;</button>
 					<strong>错误! </strong>${ERROR }
 				</div>	
+				</c:if>
 				<div class="login">
 					<form class="form-horizontal"
 						action="${rootPath }/user/login.do" method="POST">

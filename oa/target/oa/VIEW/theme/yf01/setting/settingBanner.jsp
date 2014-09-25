@@ -8,7 +8,6 @@
 %>
 
 <div class="span2">
-	<h4>系统设置</h4>
 	<div class="sidebar">
 		<ul class="col-nav span2">
 			<li>
@@ -20,7 +19,7 @@
 					<li>
 						<a href="#"> <i class="icon-plus"></i> 添加用户</a>
 						<a href="#"> <i class="icon-search"></i> 查询用户</a>
-						<a href="${rootPath }/group/list.do"> <i class="icon-groups"></i> 用户组管理</a>
+						<a href="${rootPath }/group/list.do"> <i class="icon-group"></i> 用户组管理</a>
 					</li>
 				</ul>
 			</li>
