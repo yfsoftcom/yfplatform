@@ -30,6 +30,18 @@
 
 
 
+	<!-- Spring全局过滤器 -->
+	<!-- 
+	<filter>
+		<filter-name>rbacFilter</filter-name>
+		<filter-class>biz.yf.oa.rbac.filter.RbacFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>rbacFilter</filter-name>
+		<url-pattern>*.do</url-pattern>
+	</filter-mapping> 
+	 -->
+	 
 	<!-- Spring配置 -->
 	<!-- ====================================== -->
 	<listener>
